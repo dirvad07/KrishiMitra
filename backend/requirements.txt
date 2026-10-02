@@ -7,6 +7,7 @@ apscheduler<4.0
 python-dotenv
 Pillow
 numpy
+pandas
 requests
 google-auth
 scikit-learn
