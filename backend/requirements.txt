@@ -8,6 +8,7 @@ python-dotenv
 Pillow
 numpy
 pandas
+opencv-python-headless
 requests
 google-auth
 scikit-learn
