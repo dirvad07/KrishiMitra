@@ -17,7 +17,7 @@ import io
 import json
 import logging
 import traceback
-
+from django.db import connection
 import numpy as np
 import pandas as pd
 import requests
@@ -361,9 +361,16 @@ class PredictDiseaseView(APIView):
 
 class HealthView(APIView):
     def get(self, request):
+        db_connected = True
+
+        try:
+            connection.ensure_connection()
+        except Exception:
+            db_connected = False
+
         return Response({
             "status": "ok",
-            "db_connected": ml_loader.state.get("collection") is not None,
+            "db_connected": db_connected,
             "ml_ready": True,
         })
 
