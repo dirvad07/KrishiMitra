@@ -5,8 +5,12 @@ django-cors-headers
 django-apscheduler
 apscheduler<4.0
 python-dotenv
+chromadb
+sentence-transformers
 Pillow
 numpy
+pandas
+
 requests
 google-auth
 scikit-learn
